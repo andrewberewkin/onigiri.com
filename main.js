@@ -42,6 +42,20 @@ function elementVisible(el) {
   }
 }
 
+scrollPrev = 0;
+var cadillac = document.querySelector(".header");
+
+$(window).scroll(function() {
+    var scrolled = $(window).scrollTop();
+ 
+    if ( scrolled > 100 && scrolled > scrollPrev ) {
+        cadillac.classList.add('bitch');
+    } else {
+        cadillac.classList.remove('bitch');
+    }
+    scrollPrev = scrolled;
+});
+
 function elemLink(el) {
     elem=document.querySelector(el); 
     $('html, body').animate({
